@@ -3,10 +3,10 @@
 
 #include "Shape.h"
 
-class Rectangle: public Shape {
+class Triangle: public Shape {
  public:
-  Rectangle(double w, double h);
-  ~Rectangle();
+  Triangle(double w, double h);
+  ~Triangle();
   double GetArea(void);
   void PrintArea(std::ostream &s);  
 

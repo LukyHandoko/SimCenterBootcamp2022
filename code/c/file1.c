@@ -6,7 +6,7 @@
 
 int main(int argc, char **argv) {
 
-  FILE *filePtr = fopen("file1.out","w");
+  FILE *filePtr = fopen("hasilbuatfile.out","w");
   fprintf(filePtr, "Hello World\n");
   fclose(filePtr);
 }

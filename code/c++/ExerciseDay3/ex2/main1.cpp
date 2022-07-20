@@ -1,5 +1,6 @@
 #include "Rectangle.h"
 #include "Ellipse.h"
+#include "Triangle.h"
 
 int main(int argc, char **argv) {
   Rectangle s1(1.0, 2.0, "red");

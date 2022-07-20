@@ -5,7 +5,7 @@ int main(int argc, char **argv) {
 
   /* check args */
   if (argc != 2) {
-    fprintf(stderr,"Need 3 args: appName n\n");
+    fprintf(stderr,"Need 2 args: appName n\n");
     return -1;
   }
   

@@ -13,8 +13,8 @@ int main(int argc, char **argv) {
   Container theShapes;
 
   Circle s1(2.0);
-  Shape *s2 = new Rectangle(1.0, 2.0);
-  Shape *s3 = new Rectangle(3.0,2.0);
+  Shape *s2 = new Triangle(1.0, 2.0);
+  Shape *s3 = new Triangle(3.0,2.0);
   
   theShapes.push_front(&s1);
   theShapes.push_front(s2);

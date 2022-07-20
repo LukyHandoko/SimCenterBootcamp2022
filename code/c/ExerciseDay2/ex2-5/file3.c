@@ -28,6 +28,9 @@ int main(int argc, char **argv) {
     vectorSize++;
 
     if (vectorSize == maxVectorSize) {
+      double *temp=(double *)malloc(maxVectorSize*2*sizeof(double));
+      for (int i=0;i<maxVectorSize;i++)
+
       // some code needed here I think .. programming exercise
     }
   }

@@ -1,11 +1,11 @@
-#ifndef _RECTANGLE
-#define _RECTANGLE
+#ifndef _TRIANGLE
+#define _TRIANGLE
 
 #include "ColoredShape.h"
 
 class Triangle: public ColoredShape {
  public:
-  Triangle(double w, double h, string color);
+  Triangle(double b, double h, string color);
   ~Triangle();
   double getArea(void);
   void printArea(std::ostream &s);  
@@ -13,10 +13,10 @@ class Triangle: public ColoredShape {
  protected:
 
  private:
-  double width, height;
-  static int numRect;
+  double base, height;
+  static int numTr;
 };
 
-#endif // _RECTANGLE
+#endif // _TRIANGLE
 
   
