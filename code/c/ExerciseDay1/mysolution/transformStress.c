@@ -6,7 +6,8 @@ void stressTrans(float *stressIn,float thetaRad,float *stressOut);
 
 int main(int argc, char **argv){
     if (argc!=5){
-        printf("Take 5 attributes: appName sigmaXX sigmaYY tauXY theta");
+        printf("Take 5 attributes: appName sigmaXX sigmaYY tauXY theta\n");
+        exit (-1);
     }
 
     float stressIn[3];

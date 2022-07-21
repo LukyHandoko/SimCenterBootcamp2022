@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
   float b = atof(argv[2]);
   float c = atof(argv[3]);
 
-  float D = pow(b,b)-4*a*c;
+  float D = b*b - 4*a*c;
   float x1 = (-b-sqrt(b*b-4*a*c))/(2*a);
   float x2 = (-b+sqrt(b*b-4*a*c))/(2*a);
 
@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
   } else if (D==0){
     printf("There is only one solution: x = %.4f\n", x1);
   } else {
-    printf("ups, the solution is complex number\n");
+    printf("ups, no real solution. Complex number - root square of negative number\n");
   }
   return 0;
 }
