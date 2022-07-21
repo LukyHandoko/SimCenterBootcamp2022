@@ -5,8 +5,9 @@
 // code is written using C language, rewrite using C++ language
 //
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <fstream>
+using namespace std;
 
 int main(int argc, char **argv) {
 
@@ -20,8 +21,8 @@ int main(int argc, char **argv) {
   int i = 0;
   float float1, float2;
   int maxVectorSize = 100;
-  double *vector1 = (double *)malloc(maxVectorSize*sizeof(double));
-  double *vector2 = (double *)malloc(maxVectorSize*sizeof(double));  
+  double *vector1 = new double(maxVectorSize);
+  double *vector2 = new double(maxVectorSize);  
   int vectorSize = 0;
   
   while (fscanf(filePtr,"%d, %f, %f\n", &i, &float1, &float2) != EOF) {

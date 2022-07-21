@@ -6,11 +6,16 @@ Vector::Vector(int sz)
 {
   size = 0;
   data = 0; // PROVIDE CODE
+  data = new double[sz];
+  size = sz;
 }
 
 Vector::~Vector()
 {
-  if (data != 0)
+  if (data != 0){
+    
+  }
+
     ; // PROVIDE CODE
 }
 

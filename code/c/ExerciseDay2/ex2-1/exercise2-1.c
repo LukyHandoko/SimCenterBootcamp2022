@@ -6,7 +6,7 @@
 
 int main(int argc, char **argv) {
 
-	double sigx = 12.0;
+	double sigx = 23.0;
 	double sigy = -5.5;
 	double tau  =  3.5;
 

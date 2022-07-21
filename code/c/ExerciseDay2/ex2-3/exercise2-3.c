@@ -8,10 +8,11 @@
 int main(int argc, char **argv) {
 
 	// get dth from the first argument.  This is given in degrees!
-	...
-	// might be smart to set a default value, just in case the user
-	// forgets when calling this  program;)
-
+	if (argc!=2)
+	{
+		printf("it takes 2 arguments: AppName degree\n");
+		return (-1);
+	}
 
 	// set the initial stress state
 
@@ -24,7 +25,19 @@ int main(int argc, char **argv) {
 
 	// loop to compute transformed states
 
-	StressTransform(S0, &Sp, 25.0);
-	printf("sigx' = %12.6f\nsigy' = %12.6f\ntau'  = %12.6f\n\n", Sp.sigx, Sp.sigy, Sp.tau);
+	float dth = atof (argv[1]);
+	float deg =0;
+
+	FILE *fileprint = fopen("list.csv","w");
+
+	while (deg < 180.1)
+	{
+		printf("Degree = %f\n",deg);
+		StressTransform(S0, &Sp, deg);
+	    fprintf(fileprint,"Degree of rotation = %f\n, sigx' = %12.6f\nsigy' = %12.6f\ntau'  = %12.6f\n\n", deg, Sp.sigx, Sp.sigy, Sp.tau);
+		deg+=dth;
+	}
+
+	fclose(fileprint);
 }
 
