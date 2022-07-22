@@ -3,8 +3,8 @@
 #include <math.h>
 #include <omp.h>
 
-static long int numSteps = 1000000000;
-const int expt_thds=500;
+static long int numSteps = 10;
+const int expt_thds=2;
 
 int main() {
 
@@ -13,6 +13,7 @@ int main() {
   double dx = 1./numSteps;
   double x,local_pi;//  = dx*0.50
   int numP;
+  long int count=0;
   
   double pi_thds[expt_thds];
 
@@ -22,22 +23,24 @@ int main() {
     pi_thds[i]=0;
   }
   
-  omp_set_num_threads(expt_thds);
+  //omp_set_num_threads(expt_thds);
 
   #pragma omp parallel
   {
     int id = omp_get_thread_num();
     numP = omp_get_num_threads();
 
-    for (int i=id;i<numSteps;i+=numP)
+    for (long int i=id;i<numSteps;i+=numP)
     {
       x = (i+0.5)*dx;
       local_pi = 4./(1.+x*x);
       pi_thds[id]+=local_pi*dx;
+      count++;
     }
   }
 
-  printf("jumlah threads - %d\n",numP);
+  printf("jumlah threads = %d\n",numP);
+  printf("jumlah count = %ld\n",count);
   
 
   for (int i=0; i<numP; i++) 

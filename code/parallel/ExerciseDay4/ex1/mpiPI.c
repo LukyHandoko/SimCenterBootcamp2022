@@ -28,6 +28,7 @@ int main(int argc, char **argv) {
   double dx = 1./numSteps;
   double x  = dx*0.50;
   
+  // lakukan hitungan pada setiap procesing ID. 
   for (int i=procID; i<numSteps; i+=numP) {
     x = (i+.5)*dx;
     myPart += 4./(1.+x*x);
